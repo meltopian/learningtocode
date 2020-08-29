@@ -1,6 +1,6 @@
 # Ask the user for 5 words. Print out a rubbish sentence
 # putting between 10 and 20 of these words together
-print('Please enter 5 words and I will create some delicious word salad for you: ')
+print('Please enter 5 words, one at a time, and I will create some delicious word salad for you: ')
 input1 = input()
 input2 = input()
 input3 = input()
@@ -31,7 +31,7 @@ for attempt_number in range(new_num):
     wordsaladnum = random.randint(0,4)
     list2.append(list1[wordsaladnum])
 
-print('this is the list:')
-print(list2)
+# print('this is the list:')
+# print(list2)
 line = " ".join(list2)
 print(line)
