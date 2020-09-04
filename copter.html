@@ -44,8 +44,15 @@
     v.copter_image.src = "images/copter.png"
 
     function load_level(level_number) {
-        v.background_image = new Image();
-        v.background_image.src = `images/CopterLevel${level_number}.png`;
+        const images = [new Image(), new Image(), new Image()];
+        v.background_images = images;
+        function load_backgroud_image(layer, filename) {
+            images[layer].onload = function() {images[layer] = this;}
+            images[layer].src = filename;
+        }
+        load_backgroud_image(2, `images/CopterLevel${level_number}_layer2.png`);
+        load_backgroud_image(1, `images/CopterLevel${level_number}_layer1.png`);
+        load_backgroud_image(0, `images/CopterLevel${level_number}.png`);
         reset();
     }
 
@@ -61,7 +68,10 @@
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         v.view_x_pos += 1;
-        context.drawImage(v.background_image, -v.view_x_pos, 0);
+        for (let i=2 ; i>=0 ; i--) {
+            const offset_x = Math.round(v.view_x_pos / Math.pow(2,i));
+            context.drawImage(v.background_images[i], -offset_x, 0);
+        }
         if (keys_pressed.ESCAPE) {pause(); reset();}
         if (keys_pressed.UP    ) {v.copter_y_vel += -0.1;}
         if (keys_pressed.DOWN  ) {v.copter_y_vel += 0.1;}
@@ -75,7 +85,7 @@
 
         colisions_context.fillStyle = v.color_background;
         colisions_context.fillRect(0, 0, canvas.width, canvas.height);
-        colisions_context.drawImage(v.background_image, -v.view_x_pos, 0);
+        colisions_context.drawImage(v.background_images[0], -v.view_x_pos, 0);
 
         for (let point of copter_colision_points) {
             const [r,g,b,a] = colisions_context.getImageData(
