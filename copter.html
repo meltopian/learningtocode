@@ -11,7 +11,10 @@
 
     const keys = {
         27: 'ESCAPE',
-        32: 'SPACE'
+        38: 'UP',
+        40: 'DOWN',
+        37: 'LEFT',
+        39: 'RIGHT',
     };
     const keys_pressed = {};
     function init_keys() {for (let key in keys) {keys_pressed[keys[key]]=false;}}
@@ -28,11 +31,15 @@
         }
     }
     const colisions_context=document.getElementById('canvas_colisions').getContext('2d');
+    const copter_colision_points = [[0,0],[32,9],[17,2],[22,12],[2,12]];
     const v = {
         "color_exit"    : 'rgba(255,255,0,255)',
         "level_number"  : 1,
         "color_background": `rgba(0,0,0,255)`,
     };
+    v.copter_x_vel = 0;
+    v.copter_y_vel = 0;
+
     v.copter_image = new Image();
     v.copter_image.src = "images/copter.png"
 
@@ -56,14 +63,21 @@
         v.view_x_pos += 1;
         context.drawImage(v.background_image, -v.view_x_pos, 0);
         if (keys_pressed.ESCAPE) {pause(); reset();}
-        if (keys_pressed.SPACE) {v.copter_y_pos+=-2}
-        else                    {v.copter_y_pos+= 1;}
+        if (keys_pressed.UP    ) {v.copter_y_vel += -0.1;}
+        if (keys_pressed.DOWN  ) {v.copter_y_vel += 0.1;}
+        if (keys_pressed.LEFT  ) {v.copter_x_vel += -0.1;}
+        if (keys_pressed.RIGHT ) {v.copter_x_vel += 0.1;}
+        v.copter_x_vel  = v.copter_x_vel * 0.99;
+        v.copter_y_vel  = v.copter_y_vel * 0.99;
+        v.copter_y_vel += 0.025;
+        v.copter_x_pos += v.copter_x_vel;
+        v.copter_y_pos += v.copter_y_vel;
 
         colisions_context.fillStyle = v.color_background;
         colisions_context.fillRect(0, 0, canvas.width, canvas.height);
         colisions_context.drawImage(v.background_image, -v.view_x_pos, 0);
 
-        const point = [v.copter_image.width/2, v.copter_image.height/2];
+        for (let point of copter_colision_points) {
             const [r,g,b,a] = colisions_context.getImageData(
                 v.copter_x_pos + point[0],
                 v.copter_y_pos + point[1], 1, 1).data;
@@ -76,7 +90,7 @@
             if (pixel_color != v.color_background) {
                 reset();
             }
-
+        }
         context.drawImage(
             v.copter_image, Math.round(v.copter_x_pos), Math.round(v.copter_y_pos)
         );
