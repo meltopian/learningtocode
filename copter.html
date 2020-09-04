@@ -29,12 +29,18 @@
     }
     const colisions_context=document.getElementById('canvas_colisions').getContext('2d');
     const v = {
+        "color_exit"    : 'rgba(255,255,0,255)',
+        "level_number"  : 1,
         "color_background": `rgba(0,0,0,255)`,
     };
     v.copter_image = new Image();
     v.copter_image.src = "images/copter.png"
-    v.background_image = new Image();
-    v.background_image.src = "images/copterbg.png";
+
+    function load_level(level_number) {
+        v.background_image = new Image();
+        v.background_image.src = `images/CopterLevel${level_number}.png`;
+        reset();
+    }
 
     function reset() {
         init_keys();
@@ -60,8 +66,13 @@
         const point = [v.copter_image.width/2, v.copter_image.height/2];
             const [r,g,b,a] = colisions_context.getImageData(
                 v.copter_x_pos + point[0],
-                v.copter_y_pos + point[1], 1, 1).data
+                v.copter_y_pos + point[1], 1, 1).data;
             const pixel_color = `rgba(${r},${g},${b},${a})`;
+            ` console.info(pixel_color, v.color_exit); `
+            if (pixel_color == v.color_exit) {
+                alert("Next Level");
+                load_level(++v.level_number);
+            }
             if (pixel_color != v.color_background) {
                 reset();
             }
@@ -72,7 +83,7 @@
         if (!paused) {requestAnimationFrame(timerEvent);}
     }
 
-    reset();
+    load_level(v.level_number);
     start();
 </script>
 
