@@ -1,5 +1,4 @@
 # To Do: 
-# make it accept decimal numbers
 
     # Write a calculator program that
     #     Takes text input and calculates the answer
@@ -22,6 +21,8 @@
 #     Rounding, 
 #     Mathematical Operators
 
+print ('Please enter a calculation in the form x + x. You can use +, -, *, / and %')
+
 def add(a, b):
     return a + b
 
@@ -41,8 +42,10 @@ userinput = input()
 
 calcthis = userinput.split(" ")
 
-calcthis[0] = int(calcthis[0])
-calcthis[2] = int(calcthis[2])
+calcthis[0] = float(calcthis[0])
+calcthis[2] = float(calcthis[2])
+
+#for calcthis[0] in calcthis:
 
 if calcthis[1] == '+':
 #    finalanswer = calcthis[0] + calcthis[2]
@@ -55,8 +58,10 @@ elif calcthis[1] == '/':
     finalanswer = divide(calcthis[0],calcthis[2])
 elif calcthis[1] == '%':
     finalanswer = remainder(calcthis[0],calcthis[2])
+# elif calcthis[0] or calcthis[2] != float:
+#     print('please enter a calculation I can understand')
 else: 
-    print('this aint no operator, son')
+    print('You need to use a defined operator')
 
 finalanswer = round(finalanswer, 3)
 print(finalanswer)
