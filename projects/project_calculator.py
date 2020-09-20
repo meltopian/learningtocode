@@ -38,14 +38,31 @@ def divide(a, b):
 def remainder(a, b):
     return a % b
 
-userinput = input()
 
-calcthis = userinput.split(" ")
+def parsecalc(userinput,prevanswer):
+    calcthis = userinput.split(" ")
+    calcthis[0] = float(calcthis[0])
+    calcthis[2] = float(calcthis[2])
 
-calcthis[0] = float(calcthis[0])
-calcthis[2] = float(calcthis[2])
+answer = None
 
-#for calcthis[0] in calcthis:
+while True:
+    userinput = input()
+    answer = parsecalc(userinput,answer)
+    if answer == 'exit':
+        break
+    elif answer == None:
+        print ('I dont know that one')
+    else:
+        print (answer)
+
+parsecalc
+#calcthis = userinput.split(" ")
+
+#calcthis[0] = float(calcthis[0])
+#calcthis[2] = float(calcthis[2])
+
+##for calcthis[0] in calcthis:
 
 if calcthis[1] == '+':
 #    finalanswer = calcthis[0] + calcthis[2]
