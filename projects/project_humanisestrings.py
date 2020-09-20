@@ -19,12 +19,7 @@
 
 # doctest
 
-print ('please input the filesize in bytes')
-userinput = input()
-print ('type d to use decimal or b to use binary')
-userinput2 = input()
-
-#userinput = userinput.strip()
+# Functions ---------------------------------------------------------------------
 
 def passthrough(x):
     return x
@@ -53,53 +48,91 @@ def giga(x):
 def tera(x):
     return x / 1000000000000
 
-userinput = int(userinput)
 
-finalanswer = None
+# Old --------------------------------------------------------------------------
 
-if userinput <= 999 and userinput2 == 'd':
-    finalanswer = passthrough(userinput)
-    finalanswer = str(finalanswer) + ' bytes'
-elif userinput <= 1023 and userinput2 == 'b':
-    finalanswer = passthrough(userinput)
-    finalanswer = str(finalanswer) + ' bytes'
-elif userinput <= 9999999 and userinput2 == 'd':
-    finalanswer = kilo(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' KB'
-elif userinput <= 9999999999 and userinput2 == 'd':
-    finalanswer = mega(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' MB'
-elif userinput <= 9999999999999 and userinput2 == 'd':
-    finalanswer = giga(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' GB'
-elif userinput <= 9999999999999999 and userinput2 == 'd':
-    finalanswer = tera(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' TB'
-elif userinput <= 1048575 and userinput2 == 'b':
-    finalanswer = kibi(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' KiB'
-elif userinput <= 1073741823 and userinput2 == 'b':
-    finalanswer = mibi(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' MiB'
-elif userinput <= 1099511627775 and userinput2 == 'b':
-    finalanswer = gibi(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' GiB'
-elif userinput <= 1125899906842623 and userinput2 == 'b':
-    finalanswer = tebi(userinput)
-    finalanswer = round(finalanswer, 2)
-    finalanswer = str(finalanswer) + ' TiB'
-else:
-    print('something went wrong')
+def old():
 
-print ('your file is: ')
-print (finalanswer)
+    #userinput = userinput.strip()
+
+    print ('please input the filesize in bytes')
+    userinput = input()
+    print ('type d to use decimal or b to use binary')
+    userinput2 = input()
+
+    userinput = int(userinput)
+
+    finalanswer = None
+
+    if userinput <= 999 and userinput2 == 'd':
+        finalanswer = passthrough(userinput)
+        finalanswer = str(finalanswer) + ' bytes'
+    elif userinput <= 1023 and userinput2 == 'b':
+        finalanswer = passthrough(userinput)
+        finalanswer = str(finalanswer) + ' bytes'
+    elif userinput <= 9999999 and userinput2 == 'd':
+        finalanswer = kilo(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' KB'
+    elif userinput <= 9999999999 and userinput2 == 'd':
+        finalanswer = mega(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' MB'
+    elif userinput <= 9999999999999 and userinput2 == 'd':
+        finalanswer = giga(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' GB'
+    elif userinput <= 9999999999999999 and userinput2 == 'd':
+        finalanswer = tera(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' TB'
+    elif userinput <= 1048575 and userinput2 == 'b':
+        finalanswer = kibi(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' KiB'
+    elif userinput <= 1073741823 and userinput2 == 'b':
+        finalanswer = mibi(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' MiB'
+    elif userinput <= 1099511627775 and userinput2 == 'b':
+        finalanswer = gibi(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' GiB'
+    elif userinput <= 1125899906842623 and userinput2 == 'b':
+        finalanswer = tebi(userinput)
+        finalanswer = round(finalanswer, 2)
+        finalanswer = str(finalanswer) + ' TiB'
+    else:
+        print('something went wrong')
+
+    print (f'your file is: {finalanswer}')
 
 #830642644
 # test number - 830,642,644 (792MB)
+
+
+def humanise(bytes):
+    """
+    >>> humanise(1)
+    '1 bytes'
+    >>> humanise(1234)
+    '1 kilobytes'
+    >>> humanise(1999)
+    '2 kilobytes'
+
+    """
+    if bytes < pow(1000, 1):
+        return f'{bytes} bytes'
+    elif bytes < pow(1000, 2):
+        return f'{int(round(bytes/pow(1000, 1), 0))} kilobytes'
+
+
+
+print('Hello1')
+print(f'my name is {__name__}')
+print(f'my file is {__file__}')
+
+if __name__ == '__main__':
+    print('Hello2')
+    old()
+    #humanise(input())
