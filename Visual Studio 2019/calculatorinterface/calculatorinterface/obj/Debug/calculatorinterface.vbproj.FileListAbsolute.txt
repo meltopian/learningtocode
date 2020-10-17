@@ -1,0 +1,12 @@
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\bin\Debug\calculatorinterface.exe.config
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\bin\Debug\calculatorinterface.exe
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\bin\Debug\calculatorinterface.pdb
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\bin\Debug\calculatorinterface.xml
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.Form1.resources
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.Resources.resources
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.vbproj.GenerateResource.cache
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.vbproj.CoreCompileInputs.cache
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.exe
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.xml
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.pdb
+C:\codelessons\learningtocode\Visual Studio 2019\calculatorinterface\calculatorinterface\obj\Debug\calculatorinterface.vbprojAssemblyReference.cache

@@ -1,0 +1,12 @@
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\bin\Debug\vbtest.exe.config
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\bin\Debug\vbtest.exe
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\bin\Debug\vbtest.pdb
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\bin\Debug\vbtest.xml
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.vbprojAssemblyReference.cache
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.Form1.resources
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.Resources.resources
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.vbproj.GenerateResource.cache
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.vbproj.CoreCompileInputs.cache
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.exe
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.xml
+C:\codelessons\learningtocode\Visual Studio 2019\vbtest\vbtest\obj\Debug\vbtest.pdb

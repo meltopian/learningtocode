@@ -19,10 +19,8 @@
 
 # doctest
 
-print ('please input the filesize in bytes')
-userinput = input()
-print ('type d to use decimal or b to use binary')
-userinput2 = input()
+userinput = input('please input the filesize in bytes: ')
+userinput2 = input('type d to use decimal or b to use binary: ')
 
 #userinput = userinput.strip()
 
@@ -103,4 +101,4 @@ print (f'your file is: {finalanswer}')
 #830642644
 # test number - 830,642,644 (792MB)
 
-if thing != 
+#if thing != 
