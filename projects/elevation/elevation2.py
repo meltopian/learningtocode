@@ -35,30 +35,19 @@ image_des = Image.new('RGB', (image_src.width, image_src.height), 0x000000)
 
 sea_level = 0
 
+def land_height_to_color(land_height):
+    """
+    >>> land_height_to_color(200)
+    (0, 220, 0)
+    """
+    for name, height, color in data:
+        if land_height >= height:
+            return color
+
 # TODO - sea_level to meters function
 for y in range(image_src.height):
     for x in range(image_src.width):
         land_height = image_src.getpixel((x, y))  # Greyscale image so we get 0->255 back from getpixel
-        # for x in (1,2,3):
-
-        # for x, y in ((1,'a'),(2,'b'),(3,'c')):
-
-        # for item in ((1,'a'),(2,'b'),(3,'c')):
-        #     x = item[0]
-        #     y = item[1]
-
-
-        # for level_tuple in data:
-        #     name = level_tuple[0]
-        #     height = level_tuple[1]
-        #     color = level_tuple[2]
-        #     if land_height >= height:
-        #         break
-
-        for name, height, color in data:
-            if land_height >= height:
-                break
-
-        image_des.putpixel((x, y), color)
+        image_des.putpixel((x, y), land_height_to_color(land_height))
 
 image_des.show()
