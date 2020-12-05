@@ -19,20 +19,6 @@
 
 
 
-
-# def surnamevalidate(text):
-#     if "text".isalpha() == True and "text[0]".isupper() == True:
-#         return "yes"
-#     else: 
-#         return "no"
-
-
-
-
-# if __name__ == '__main__':
-#     while True:
-#         surnamevalidate(input)
-
 def checksurname(): 
     surname = input('please enter a surname to check: ')
     if (surname.isalpha()) and (surname[0].isupper()) and (surname[1:].islower()):
@@ -40,20 +26,25 @@ def checksurname():
     else:
         return "invalid surname"
 
-def checkparity():
-    parity = input('enter an 8-digit binary number representing a byte with parity included: ')
+def checkparity(parity):
+    #parity = input('enter an 8-digit binary number representing a byte with parity included: ')
     addbits = int(int(parity[0]) + int(parity[1]) + int(parity[2]) + int(parity[3]) + int(parity[4]) + int(parity[5]) + int(parity[6]))
     # if (parity.isalpha) == True or len(parity) > 8:
     #     return('invalid input')
     if addbits % 2 == 0 and int(parity[7]) == 0:
-        return('valid parity')
+        return True
     elif addbits % 2 == 1 and int(parity[7]) == 1:
-        return('valid parity')
+        return True
 
     else:
-        return('invalid parity')
+        return False
 
-#def checkccnumber():       
+# make doctests
+# input should be a parameter
+# what about double barrelled surnames?
+# the functions should return true or false
+
+# def checkccnumber():       
 
 # def checkpostcode():
 
