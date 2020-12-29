@@ -26,8 +26,8 @@ def checksurname():
     else:
         return "invalid surname"
 
-def checkparity(parity):
-    #parity = input('enter an 8-digit binary number representing a byte with parity included: ')
+def checkparity():
+    parity = input('enter an 8-digit binary number representing a byte with parity included: ')
     addbits = int(int(parity[0]) + int(parity[1]) + int(parity[2]) + int(parity[3]) + int(parity[4]) + int(parity[5]) + int(parity[6]))
     # if (parity.isalpha) == True or len(parity) > 8:
     #     return('invalid input')
