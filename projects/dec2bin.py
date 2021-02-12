@@ -21,4 +21,4 @@ def Dec2Bin(denary):
   return output
   
 thenumber = int(input('enter a number to convert: '))
-print(f"Binary value = {Dec2Bin(thenumber)}")
+print(f"Binary value = {Dec2Bin(thenumber)}") 

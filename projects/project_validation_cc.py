@@ -15,15 +15,47 @@ def checkccnumber(ccnumber):
 # Add all doubled digits in first set to non-doubled digits in second set
 # If the final result is divisible by ten, it's valid #
 #    ccnumber = input('Please enter a credit card number to validate: ')
+# ADD A DOCTEST
+    """
+    >>> checkccnumber('3400 0000 0000 009')
+    True
+    >>> checkccnumber('4111 1111 1111 1111')
+    True
+    >>> checkccnumber('5500 0000 0000 0004')
+    True
+    >>> checkccnumber('12345678')
+    False
+    >>> checkccnumber('3000 0000 0000 04')
+    True
+    >>> checkccnumber('3000 0000 0000 04')
+    True
+    >>> checkccnumber('6011 0000 0000 0004')
+    True
+    >>> checkccnumber('2014 0000 0000 009')
+    True
+    >>> checkccnumber('3088 0000 0000 0009')
+    True
+    """
     nospace = removespace(ccnumber)
     ccindex = 0
-    evenset = []
-    oddset = []
+    oddsetindexes = list(range(0, len(nospace), 2))
+    evensetindexes = list(range(1, len(nospace), 2))
+#    breakpoint()
     while ccindex < len(nospace):
-        oddset += nospace[ccindex]
-        ccindex += 1
-        evenset += nospace[ccindex]
-        ccindex += 1
+        pass
+    # while ccindex < len(nospace):
+    #     oddset += nospace[ccindex]
+    #     ccindex += 1
+    # ccindex = 1
+    # while ccindex < len(nospace):
+    #     evenset += nospace[ccindex]
+    #     ccindex += 1
+
+    # FIX THIS COMMENTED OUT SECTION - 
+    # it won't work on odd numbers if it's 
+    # adding 2 to the index each time
+    # tuple(range(0, len(nospace), 2))
+
     oddset = [int(i) for i in oddset]
     evenset = [int(i) for i in evenset]
     doubledindex = 0
@@ -46,12 +78,8 @@ def checkccnumber(ccnumber):
         part2 += i
     # print(part2)
     finalresult = part1 + part2
-    if (finalresult % 10) == 0:
-        isitvalid = 'This credit card number is valid'
-    else: 
-        isitvalid = 'This credit card number is not valid'
-    return isitvalid
-
+    return (finalresult % 10) == 0
+   
 # aa = ['1', '2', '3', '55']
 # bb = [int(i) for i in aa]
 # or do:
@@ -59,3 +87,16 @@ def checkccnumber(ccnumber):
 
 if __name__ == '__main__':
     print(checkccnumber(input('please give a credit card number: ')))
+
+
+
+
+# Example numbers:
+# Visa  	4111 1111 1111 1111 
+# MasterCard  	5500 0000 0000 0004 
+# American Express  	3400 0000 0000 009 
+# Diner's Club  	3000 0000 0000 04 
+# Carte Blanche  	3000 0000 0000 04 
+# Discover  	6011 0000 0000 0004 
+# en Route  	2014 0000 0000 009 
+# JCB  	3088 0000 0000 0009 

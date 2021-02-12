@@ -1,0 +1,13 @@
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.exe
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.deps.json
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.runtimeconfig.json
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.runtimeconfig.dev.json
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.dll
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\bin\Debug\netcoreapp3.1\C Sharp Hello World.pdb
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.vbprojAssemblyReference.cache
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.AssemblyInfoInputs.cache
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.AssemblyInfo.vb
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.vbproj.CoreCompileInputs.cache
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.dll
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.pdb
+C:\codelessons\learningtocode\c sharp\C Sharp Hello World\C Sharp Hello World\obj\Debug\netcoreapp3.1\C Sharp Hello World.genruntimeconfig.cache
