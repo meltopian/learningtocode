@@ -11,12 +11,46 @@
 
 import math as m
 
+
 def dentohex(numbertoconv):
+    """
+    >>> dentohex(0)
+    '0'
+    >>> dentohex(9)
+    '9'
+    >>> dentohex(10)
+    'a'
+    >>> dentohex(16)
+    '10'
+    """
     # hex numbers - 0-9 = 0-9, 10-15 = A-F
-    pass
+    hexnums = "0123456789abcdef" 
+    numbertoconv = int(numbertoconv)
+    output = ''
+    workingnum = 0
+    while numbertoconv > 0:
+#        print (f'intial num {numbertoconv}')
+        newhex = numbertoconv % 16
+        newhex = hexnums[newhex]
+        output += str(newhex)
+#        print (output)
+        workingnum = numbertoconv / 16
+        numbertoconv = m.floor(workingnum)
+    if not output:
+        output = '0'
+    return output[::-1]
 
 def hextoden(numbertoconv):
-    pass
+    numbertoconv = str(numbertoconv)
+    dennums = {"0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "a": "10", "b": "11", "c": "12", "d": "13", "e": "14", "f": "15"} 
+    conv2 = ''
+    for i in numbertoconv:
+#        if i in dennums:
+            #breakpoint()
+            conv1 = dennums[i]
+            conv2 += str(dentobin(conv1))
+            output = bintoden(conv2)
+    return output
 
 def dentogrey(numbertoconv):
     pass
@@ -62,7 +96,7 @@ def dentobin(numbertoconv):
 
 
 if __name__ == '__main__':
-    print(dentobin(input('please type a number to convert: ')))
+    print(hextoden(input('please type a number to convert: ')))
 
     # choice = input('please type 1 for denary to binary, 2 for binary to denary: ')
 
