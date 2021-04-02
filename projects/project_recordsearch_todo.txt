@@ -1,0 +1,2 @@
+- Consider asking user what operation you want to do (sort records, search)
+- tranlateuserchoice is logic representing data, it should be a dictionary
